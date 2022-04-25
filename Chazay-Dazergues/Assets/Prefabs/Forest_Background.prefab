@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1295128105929569122}
   - component: {fileID: 1295128105929569123}
   m_Layer: 0
-  m_Name: Layer_0001_8
+  m_Name: Layer_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,9 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1295128106533586952}
   - component: {fileID: 1295128106533586953}
+  - component: {fileID: 6291154407983692263}
   m_Layer: 0
-  m_Name: Layer_0000_9
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +165,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6291154407983692263
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295128106533586955}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -3.75945}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.28, y: 7.93}
+    newSize: {x: 9.28, y: 7.93}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.28, y: 0.41110063}
+  m_EdgeRadius: 0
 --- !u!1 &1557920464534763269
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +202,7 @@ GameObject:
   - component: {fileID: 5141525238192479617}
   - component: {fileID: 8148641426741220556}
   m_Layer: 0
-  m_Name: Layer_0006_4
+  m_Name: Layer_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +284,7 @@ GameObject:
   - component: {fileID: 4447536951926721931}
   - component: {fileID: 2277586298825305200}
   m_Layer: 0
-  m_Name: Layer_0008_3
+  m_Name: Layer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,7 +366,7 @@ GameObject:
   - component: {fileID: 5740976645057342045}
   - component: {fileID: 5745324674456440748}
   m_Layer: 0
-  m_Name: Layer_0010_1
+  m_Name: Layer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,7 +487,7 @@ GameObject:
   - component: {fileID: 4001076740931032348}
   - component: {fileID: 7194238191006540963}
   m_Layer: 0
-  m_Name: Layer_0002_7
+  m_Name: Layer_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,7 +569,7 @@ GameObject:
   - component: {fileID: 6459352889681183217}
   - component: {fileID: 4423411912414132187}
   m_Layer: 0
-  m_Name: Layer_0003_6
+  m_Name: Layer_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +651,7 @@ GameObject:
   - component: {fileID: 1205504615239046043}
   - component: {fileID: 6151301391999338894}
   m_Layer: 0
-  m_Name: Layer_0009_2
+  m_Name: Layer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,7 +733,7 @@ GameObject:
   - component: {fileID: 5388521780687178402}
   - component: {fileID: 6771772458466967424}
   m_Layer: 0
-  m_Name: Layer_0005_5
+  m_Name: Layer_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
