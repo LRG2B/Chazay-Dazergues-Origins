@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 //Inventory sera un singleton
 //Pour qu'on puisse récupérer des objets
-public class Inventory : MonoBehaviour
+public class inventory : MonoBehaviour
 {
     public int CoinsCount;
 
     // public Text coinsCountText;
     //Création du singleton
-    public static Inventory instance;
+    public static inventory instance;
 
     private void Awake()
     {
@@ -18,19 +18,17 @@ public class Inventory : MonoBehaviour
 
         if (instance != null && instance != this)
         {
-            Debug.LogWarning("manager  Inventory deja existant ");
+            Debug.LogWarning("manager  inventory deja existant ");
             Destroy(this);
         }
         else
         {
             instance = this;
-            DontDestroyOnLoad(instance);
         }
     }
 
     public void AddCoins(int count)
     {
         CoinsCount += count;
-        // coinsCountText.text = CoinsCount.ToString();
     }
 }
