@@ -3,13 +3,14 @@ using UnityEngine.UI;
 
 //Inventory sera un singleton
 //Pour qu'on puisse récupérer des objets
-public class inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
-    public int CoinsCount;
+    public int nb_coins;
+    public int nb_potions;
 
     // public Text coinsCountText;
     //Création du singleton
-    public static inventory instance;
+    public static Inventory instance;
 
     private void Awake()
     {
@@ -27,8 +28,32 @@ public class inventory : MonoBehaviour
         }
     }
 
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire2")) // correspont au clic droit de la souris ( en utillisant ces clé la le jeu et compatible manette )
+        {
+            UsePotion();
+        }
+    }
+
     public void AddCoins(int count)
     {
-        CoinsCount += count;
+        nb_coins += count;
     }
+
+    public void AddPotions()
+    {
+        nb_potions++;
+    }
+
+    public void UsePotion()
+    {
+        if (nb_potions != 0)
+        {
+            nb_potions--;
+            Health.instance.AddPV(10);
+        }
+    }
+
 }
