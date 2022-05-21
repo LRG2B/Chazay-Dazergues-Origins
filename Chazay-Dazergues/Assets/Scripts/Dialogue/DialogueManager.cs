@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        speed = GameObject.Find("HeroKnight").GetComponent<Player_mouvement>().Speed;
+        speed = GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed;
         //jump = GameObject.Find("Player").GetComponent<Player_mouvement>().jumpPower;
     }
 
@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        GameObject.Find("HeroKnight").GetComponent<Player_mouvement>().Speed = 0f;
+        GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed = 0f;
         //GameObject.Find("Player").GetComponent<PlayerController>().jumpPower = 0f;
         GameObject.Find("HeroKnight").GetComponent<Animator>().SetBool("CanMove", false);
         animator.SetBool("IsOpen", true);
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
 
-        GameObject.Find("HeroKnight").GetComponent<Player_mouvement>().Speed = speed;
+        GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed = speed;
         //GameObject.Find("Player").GetComponent<Player_mouvement>().jumpPower = jump;
         GameObject.Find("HeroKnight").GetComponent<Animator>().SetBool("CanMove", true);
     }
