@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000022888184, y: 109}
-  m_SizeDelta: {x: 693.22, y: 42.44}
+  m_AnchoredPosition: {x: 0, y: 223}
+  m_SizeDelta: {x: 1060.9, y: 89.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103948361
 MonoBehaviour:
@@ -253,8 +253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 6.7901, y: 3.6950378}
-  m_SizeDelta: {x: 728.71, y: 65.68}
+  m_AnchoredPosition: {x: 6.7901, y: -5.73}
+  m_SizeDelta: {x: 1723.1, y: 180.1}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &308753954
 MonoBehaviour:
@@ -278,10 +278,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -305,6 +305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7948552948206606836, guid: 7fa570dd11caa9f489447de686f62e25, type: 3}
+      propertyPath: orthographic size
+      value: 2.2638729
+      objectReference: {fileID: 0}
     - target: {fileID: 7948552949767032773, guid: 7fa570dd11caa9f489447de686f62e25, type: 3}
       propertyPath: m_Name
       value: HeroKnight
@@ -355,6 +359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa570dd11caa9f489447de686f62e25, type: 3}
+--- !u!20 &349276390 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7948552948206606836, guid: 7fa570dd11caa9f489447de686f62e25, type: 3}
+  m_PrefabInstance: {fileID: 349276389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549033575
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +565,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 349276390}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -626,11 +635,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 19
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 3
+    m_MaxSize: 51
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -684,8 +693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 185.4, y: -141.09998}
-  m_SizeDelta: {x: 751.42, y: 118.29}
+  m_AnchoredPosition: {x: 308.4, y: -313}
+  m_SizeDelta: {x: 1738.4, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1311414528
 MonoBehaviour:
@@ -971,8 +980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.0999756, y: 0.000019073486}
-  m_SizeDelta: {x: 160, y: 22.61}
+  m_AnchoredPosition: {x: 6.7901, y: 0.000015258789}
+  m_SizeDelta: {x: 643.13, y: 65.68}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1742510134
 MonoBehaviour:
@@ -996,10 +1005,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -1051,7 +1060,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -8.5, y: -0.14492798}
-  m_SizeDelta: {x: 195.79999, y: 30}
+  m_SizeDelta: {x: 414.25, y: 45.82}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1861381693
 MonoBehaviour:
@@ -1075,10 +1084,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 5
     m_AlignByGeometry: 0
