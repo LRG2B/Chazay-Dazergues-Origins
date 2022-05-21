@@ -7,7 +7,8 @@ public class potion_pickable : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Inventory.instance.AddPotions();
-            Destroy(gameObject.transform.root.gameObject);
+            //Destroy(gameObject.transform.root.gameObject);
+            Destroy(gameObject);
         }
     }
 }
