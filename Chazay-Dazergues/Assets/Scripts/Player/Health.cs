@@ -27,5 +27,7 @@ public class Health : MonoBehaviour
     public void AddPV(int value)
     {
         PV += value;
+        if (PV > PV_max)
+            PV = PV_max;
     }
 }
