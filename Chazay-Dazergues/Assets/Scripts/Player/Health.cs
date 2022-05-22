@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int PV;
-    int PV_max;
+    public int PV = 80;
+    int PV_max = 100;
 
     public static Health instance;
 
@@ -22,7 +22,6 @@ public class Health : MonoBehaviour
             instance = this;
         }
     }
-    
 
     public void AddPV(int value)
     {
