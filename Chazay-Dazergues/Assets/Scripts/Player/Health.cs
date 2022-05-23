@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int PV = 100;
-    public int PV_max 100;
+    public int PV_max = 100;
 
     public static Health instance;
 
