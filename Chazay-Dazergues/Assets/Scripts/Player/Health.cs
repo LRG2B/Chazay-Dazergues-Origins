@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int PV = 80;
-    int PV_max = 100;
+    public int PV = 100;
+    public int PV_max 100;
 
     public static Health instance;
+
+    public HealthBar healthbar;
 
     // Start is called before the first frame update
     public void Awake()
@@ -23,9 +25,31 @@ public class Health : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        PV = PV_max;
+        healthbar.SetMaxHealth(PV_max);
+    }
+
+    //Uniquement pour des tests
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(20);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        PV -= damage;
+        healthbar.SetHealth(PV);
+    }
+
     public void AddPV(int value)
     {
         PV += value;
+        healthbar.SetHealth(PV);
         if (PV > PV_max)
             PV = PV_max;
     }
