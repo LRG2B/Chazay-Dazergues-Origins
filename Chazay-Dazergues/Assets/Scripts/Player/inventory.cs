@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
         nb_potions++;
     }
 
-    public void UsePotion()
+    private void UsePotion()
     {
         if (nb_potions != 0)
         {
