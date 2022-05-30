@@ -8,6 +8,6 @@ public class UpdateTextPotions : MonoBehaviour
     void Update()
     {
         //print(Inventory.instance.CoinsCount.ToString());
-        gameObject.GetComponent<UnityEngine.UI.Text>().text = Inventory.instance.nb_potions.ToString();
+        gameObject.GetComponent<UnityEngine.UI.Text>().text = inventory.instance.nb_potions.ToString();
     }
 }

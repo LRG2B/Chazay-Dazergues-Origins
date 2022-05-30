@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 //Inventory sera un singleton
 //Pour qu'on puisse récupérer des objets
-public class Inventory : MonoBehaviour
+public class inventory : MonoBehaviour
 {
     public int nb_coins;
     public int nb_potions;
 
     // public Text coinsCountText;
     //Création du singleton
-    public static Inventory instance;
+    public static inventory instance;
 
     private void Awake()
     {
