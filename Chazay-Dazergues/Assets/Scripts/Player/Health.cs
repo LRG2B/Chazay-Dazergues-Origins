@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
-{
+{   
     public int PV = 100;
-    public int PV_max 100;
+    public int PV_max = 100;
 
     public static Health instance;
 
     public HealthBar healthbar;
 
     // Start is called before the first frame update
-    public void Awake()
-    {
-        if (instance != null && instance != this)
+    void Awake()
+    {    
+
+       if (instance != null && instance != this)
         {
             Debug.LogWarning("manager Health deja existant ");
             Destroy(this);
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     void Start()
@@ -31,7 +33,7 @@ public class Health : MonoBehaviour
         healthbar.SetMaxHealth(PV_max);
     }
 
-    //Uniquement pour des tests
+    //Uniquement pour des tests - Inflige des dégâts
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
@@ -51,6 +53,8 @@ public class Health : MonoBehaviour
         PV += value;
         healthbar.SetHealth(PV);
         if (PV > PV_max)
+        {
             PV = PV_max;
+        }
     }
 }
