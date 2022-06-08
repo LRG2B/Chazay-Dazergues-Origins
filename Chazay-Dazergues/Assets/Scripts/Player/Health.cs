@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
 
     public HealthBar healthbar;
 
+    Animator Anim;
+
     // Start is called before the first frame update
     public void Awake()
     {
@@ -29,6 +31,8 @@ public class Health : MonoBehaviour
     {
         PV = PV_max;
         healthbar.SetMaxHealth(PV_max);
+        Anim = GetComponent<Animator>();
+
     }
 
     //Uniquement pour des tests
@@ -40,10 +44,15 @@ public class Health : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         PV -= damage;
         healthbar.SetHealth(PV);
+        Anim.SetTrigger("hit");
+        if (PV <= 0)
+        {
+            Anim.SetBool("dead", true);
+        }
     }
 
     public void AddPV(int value)
@@ -53,4 +62,11 @@ public class Health : MonoBehaviour
         if (PV > PV_max)
             PV = PV_max;
     }
+
+    public bool GetBoolDead()
+    {
+        return Anim.GetBool("dead");
+    }
+
+
 }

@@ -30,16 +30,43 @@ public class enemies_patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+       Vector3 dir = target.position - transform.position;
+       transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        //si  il est arriver a moin de 0.3f de la destination il repart sur sont autre point de destination
-        if (Vector3.Distance(transform.position, target.position) < 0.3f)
+       //si  il est arriver a moin de 0.3f de la destination il repart sur sont autre point de destination
+       if (Vector3.Distance(transform.position, target.position) < 0.3f)
+       {
+           dest_point = (dest_point + 1) % waypoints.Length;
+           target = waypoints[dest_point];
+           //retourne le personnage
+           sprite.flipX = !sprite.flipX;
+       }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        Debug.Log("collision de enemie 1 avec un objet trigger qui est : ");
+        if (col.CompareTag("Player"))
         {
-            dest_point = (dest_point + 1) % waypoints.Length;
-            target = waypoints[dest_point];
-            //retourne le personnage
-            sprite.flipX = !sprite.flipX;
+            Debug.Log("Le joueur");
+            if (!Health.instance.GetBoolDead())
+            {
+                 col.GetComponent<Health>().TakeDamage(domage);
+                 anim.SetTrigger("attack");
+            }
+
         }
     }
+
+
+    public void Take_domage(int domage)
+    {
+        PV -= domage;
+        anim.SetTrigger("hit");
+        if (PV < 0)
+        {
+            Destroy(gameObject.transform.root.gameObject);
+        } 
+    }
+
 }

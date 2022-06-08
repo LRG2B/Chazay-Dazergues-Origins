@@ -31,30 +31,39 @@ public class Mouvement : MonoBehaviour
     
     void Update()
     {
-        float move = Input.GetAxis("Horizontal");
-
-        if (canMove)
+        if (!playerAnim.GetBool("dead"))
         {
-            playerRB.velocity = new Vector2(move * Speed, playerRB.velocity.y);
-            // la ligne en dessous serviras pour l'animation
-            playerAnim.SetFloat("horizontal_speed", Mathf.Abs(move)); // Defini une valeur pour le float MoveSpeed dans notre animator
+            float move = Input.GetAxis("Horizontal");
+
+            if (canMove)
+            {
+                playerRB.velocity = new Vector2(move * Speed, playerRB.velocity.y);
+                // la ligne en dessous serviras pour l'animation
+                playerAnim.SetFloat("horizontal_speed", Mathf.Abs(move)); // Defini une valeur pour le float MoveSpeed dans notre animator
+            }
+            else
+            {
+                playerRB.velocity = new Vector2(0, playerRB.velocity.y); // Si movement non autorise, on arrete la velocite
+                                                                         // la ligne en dessous serviras pour l'animation
+                playerAnim.SetFloat("horizontal_speed", 0); // on arrete aussi l'animation en cours si on etait en train de courir
+            }
+
+            Jump(); // fonction jump
+
+            //Flip
+            if (move < 0 && facingRight == true)
+            {
+                Flip();
+            }
+            else if (move > 0 && facingRight == false)
+                Flip();
         }
         else
         {
             playerRB.velocity = new Vector2(0, playerRB.velocity.y); // Si movement non autorise, on arrete la velocite
-            // la ligne en dessous serviras pour l'animation
+                                                                     // la ligne en dessous serviras pour l'animation
             playerAnim.SetFloat("horizontal_speed", 0); // on arrete aussi l'animation en cours si on etait en train de courir
         }
-
-        Jump(); // fonction jump
-
-        //Flip
-        if (move < 0 && facingRight == true)
-        {
-            Flip();
-        }
-        else if (move > 0 && facingRight == false)
-            Flip();
     }
 
 
