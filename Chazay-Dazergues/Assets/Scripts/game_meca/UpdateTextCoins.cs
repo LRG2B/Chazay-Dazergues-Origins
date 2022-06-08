@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class UpdateTextCoins : MonoBehaviour
 {
-
-
     // Update is called once per frame
     void Update()
     {

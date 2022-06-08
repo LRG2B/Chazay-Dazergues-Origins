@@ -25,6 +25,8 @@ public class inventory : MonoBehaviour
         else
         {
             instance = this;
+            //Création de problèmes
+            //DontDestroyOnLoad(instance);
         }
     }
 
