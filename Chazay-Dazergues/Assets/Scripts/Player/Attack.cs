@@ -49,7 +49,11 @@ public class Attack : MonoBehaviour
             {
                 enemy.GetComponent<enemies_patrol>().Take_domage(attack_domage);
             }
-            
+            if (enemy.CompareTag("archer"))  // test si l'enemy est de type enemy 1
+            {
+                enemy.GetComponent<archer_control>().Take_domage(attack_domage);
+            }
+
         }
 
     }

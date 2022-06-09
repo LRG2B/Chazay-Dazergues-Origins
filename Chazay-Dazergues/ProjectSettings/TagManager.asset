@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - PlayerSpawn
   - enemy_simple
+  - archer
   layers:
   - Default
   - TransparentFX
