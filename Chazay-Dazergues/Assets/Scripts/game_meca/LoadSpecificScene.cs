@@ -61,10 +61,10 @@ public class LoadSpecificScene : MonoBehaviour
     {
         //Pour sauvegarder les datas
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
-        LoadAndSaveData.instance.SaveData();
 
 
         //Pour activer le loading screen
+        LoadAndSaveData.instance.SaveData();
         loadingScreen.SetActive(true);
             
         while (!operation.isDone)
