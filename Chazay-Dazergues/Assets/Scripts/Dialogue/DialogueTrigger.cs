@@ -20,10 +20,6 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
             IsAllow = false;
         }
-        if (Input.GetKeyDown("e"))
-        {
-            Debug.Log("Touche E pressée");
-        }
     }
 
     void OnTriggerEnter2D()

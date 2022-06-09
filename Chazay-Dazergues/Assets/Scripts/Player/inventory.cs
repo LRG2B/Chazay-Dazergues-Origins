@@ -5,7 +5,7 @@ using UnityEngine.UI;
 //Pour qu'on puisse récupérer des objets
 public class inventory : MonoBehaviour
 {
-    public int nb_coins;
+    public int nb_coins = 100;
     public int nb_potions;
 
     // public Text coinsCountText;
@@ -19,7 +19,7 @@ public class inventory : MonoBehaviour
 
         if (instance != null && instance != this)
         {
-            Debug.LogWarning("manager  inventory deja existant ");
+            Debug.LogWarning("manager inventory deja existant ");
             Destroy(this);
         }
         else
@@ -33,21 +33,17 @@ public class inventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire2")) // correspont au clic droit de la souris ( en utillisant ces clé la le jeu et compatible manette )
+        if (Input.GetButtonDown("Fire2")) // correspont au clic droit de la souris ( en utillisant ces clé la le jeu est compatible manette )
         {
             UsePotion();
         }
     }
 
-    public void AddCoins(int count)
-    {
-        nb_coins += count;
-    }
+    public void AddCoins(int count) { nb_coins += count; }
 
-    public void AddPotions()
-    {
-        nb_potions++;
-    }
+    public void SuppCoins(int count) { nb_coins -= count; }
+
+    public void AddPotions() { nb_potions++; }
 
     private void UsePotion()
     {

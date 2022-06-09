@@ -31,6 +31,7 @@ public class Mouvement : MonoBehaviour
     
     void Update()
     {
+        canMove = GameObject.Find("HeroKnight").GetComponent<Animator>().GetBool("CanMove");
         if (!playerAnim.GetBool("dead"))
         {
                 float move = Input.GetAxis("Horizontal");
@@ -51,11 +52,11 @@ public class Mouvement : MonoBehaviour
             Jump(); // fonction jump
 
             //Flip
-            if (move < 0 && facingRight == true)
+            if (move < 0 && facingRight == true && canMove)
             {
                 Flip();
             }
-            else if (move > 0 && facingRight == false)
+            else if (move > 0 && facingRight == false && canMove)
                 Flip();
         }
         else
@@ -70,7 +71,6 @@ public class Mouvement : MonoBehaviour
 
     void Flip()
     {
-        
          facingRight = !facingRight;
          // On change la valeur du boolen facing right par son contraire, representant la direction du personnage
          playerRender.flipX = !playerRender.flipX;

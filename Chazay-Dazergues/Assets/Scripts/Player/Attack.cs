@@ -59,4 +59,8 @@ public class Attack : MonoBehaviour
         can_attack = true;
     }
 
+    public void UpgradeDamage(int damage)
+    {
+        attack_domage += damage;
+    }
 }
