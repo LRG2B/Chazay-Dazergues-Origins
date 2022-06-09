@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1671937049
+--- !u!1001 &1028173615
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -144,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475180250555744009, guid: 8cf5393fa1b43c049bc90428e417b932, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7513905
+      value: -6.77
       objectReference: {fileID: 0}
     - target: {fileID: 5475180250555744009, guid: 8cf5393fa1b43c049bc90428e417b932, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.202287
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5475180250555744009, guid: 8cf5393fa1b43c049bc90428e417b932, type: 3}
       propertyPath: m_LocalPosition.z
@@ -184,10 +184,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475180250555744021, guid: 8cf5393fa1b43c049bc90428e417b932, type: 3}
       propertyPath: m_Name
-      value: HeroKnight 1
+      value: HeroKnight
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5475180250555744014, guid: 8cf5393fa1b43c049bc90428e417b932, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf5393fa1b43c049bc90428e417b932, type: 3}
 --- !u!1 &1782970877
 GameObject:
@@ -200,7 +199,7 @@ GameObject:
   - component: {fileID: 1782970880}
   - component: {fileID: 1782970879}
   - component: {fileID: 1782970878}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
