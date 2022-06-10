@@ -46,8 +46,9 @@ public class LoadSpecificScene : MonoBehaviour
     IEnumerator LoadAsyncchrononously(string SceneName)
     {
         //Pour sauvegarder les datas
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
         LoadAndSaveData.instance.SaveData();
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
 
 
         //Pour activer le loading screen

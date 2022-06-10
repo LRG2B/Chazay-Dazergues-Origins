@@ -31,5 +31,6 @@ public class LoadAndSaveData : MonoBehaviour
         //setters
         PlayerPrefs.SetInt("coinsCount", inventory.instance.nb_coins);
         PlayerPrefs.SetInt("potionsCount", inventory.instance.nb_potions);
+        PlayerPrefs.SetInt("levelReached", CurrentSceneManager.instance.levelToUnlock);
     }
 }
