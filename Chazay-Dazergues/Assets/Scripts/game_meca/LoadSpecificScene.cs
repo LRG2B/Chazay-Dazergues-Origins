@@ -55,6 +55,7 @@ public class LoadSpecificScene : MonoBehaviour
     public void LoadLevel(string SceneName)
     {
         StartCoroutine(LoadAsyncchrononously(SceneName));
+        LoadAndSaveData.instance.SaveData();
     }
 
     IEnumerator LoadAsyncchrononously (string SceneName)
@@ -64,7 +65,6 @@ public class LoadSpecificScene : MonoBehaviour
 
 
         //Pour activer le loading screen
-        LoadAndSaveData.instance.SaveData();
         loadingScreen.SetActive(true);
             
         while (!operation.isDone)
