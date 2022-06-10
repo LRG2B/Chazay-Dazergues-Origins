@@ -8,14 +8,17 @@ public class DialogueTrigger : MonoBehaviour
     private bool IsAllow;
     public Dialogue dialogue;
 
+    private bool Activated;
+
     void Start()
     {
         IsAllow = false;
+        Activated = false;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && IsAllow)
+        if (Input.GetKeyDown("e") && IsAllow && !Activated)
         {
             TriggerDialogue();
             IsAllow = false;
@@ -41,5 +44,10 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    }
+
+    public void SetActivated(bool Activation)
+    {
+        Activated = Activation;
     }
 }
