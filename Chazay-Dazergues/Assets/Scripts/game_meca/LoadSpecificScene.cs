@@ -7,12 +7,7 @@ public class LoadSpecificScene : MonoBehaviour
 {
     //Permet de récupérer l'index du level en cours
 
-    //SceneManagment.GetActiveScene = new int (y);
-    //int y = SceneManager.GetActiveScene().buildIndex;
-
-    //Permet de charger une scène d'après une certaine donnée
-
-
+    //public Button[] levelButtons;
 
     public string SceneName;
 
@@ -21,29 +16,20 @@ public class LoadSpecificScene : MonoBehaviour
     public Slider slider;
 
 
-    //A rajouter + tard
-    //public Animator FadeSystem;
+    /*private void Start()
+    {
+        int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
-    // Start is called before the first frame update
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    //PlayerController.instance.currentLifePoints == 100;
-    //    //Si le joueur entre en contact avec quelque chose
-    //    if (collision.CompareTag("Player"))
-    //    {
-    //        StartCoroutine(loadNextScene());
-    //    }
-    //}
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if(i + 1 > levelReached)
+            {
+                levelButtons[i].interactable = false;
+            }
+        }
+    }*/
 
-    //public IEnumerator loadNextScene()
-    //{
-    //    //FadeSystem.SetTrigger("FadeIn");
-    //    yield return new WaitForSeconds(0.5f);
-    //    //Chargement d'après la valeur prise du Build Settings
-    //    //Méthode différente : Résultat identique
-    //    //SceneManager.LoadScene("Level02");
-    //    SceneManager.LoadSceneAsync(SceneName);
-    //}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -55,18 +41,19 @@ public class LoadSpecificScene : MonoBehaviour
     public void LoadLevel(string SceneName)
     {
         StartCoroutine(LoadAsyncchrononously(SceneName));
-        LoadAndSaveData.instance.SaveData();
     }
 
-    IEnumerator LoadAsyncchrononously (string SceneName)
+    IEnumerator LoadAsyncchrononously(string SceneName)
     {
         //Pour sauvegarder les datas
+        LoadAndSaveData.instance.SaveData();
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
 
 
         //Pour activer le loading screen
         loadingScreen.SetActive(true);
-            
+
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);

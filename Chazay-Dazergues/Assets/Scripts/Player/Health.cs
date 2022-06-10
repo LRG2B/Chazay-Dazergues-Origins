@@ -53,6 +53,7 @@ public class Health : MonoBehaviour
         Anim.SetTrigger("hit");
         if (PV <= 0)
         {
+            GameOverManager.instance.OnPlayerDeath();
             Anim.SetBool("dead", true);
         }
     }
@@ -67,6 +68,7 @@ public class Health : MonoBehaviour
 
     public bool GetBoolDead()
     {
+
         return Anim.GetBool("dead");
     }
 
