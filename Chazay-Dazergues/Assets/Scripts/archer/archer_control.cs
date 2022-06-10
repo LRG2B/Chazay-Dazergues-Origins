@@ -32,7 +32,7 @@ public class archer_control : MonoBehaviour
         if (player_ray.collider != null)
         {
             // 30% chance envoyer flèche
-            if(Random.Range(10,300) == Random.Range(10,300))
+            if(10 == Random.Range(10,400))
             {
                 StartCoroutine(Attack());
             }

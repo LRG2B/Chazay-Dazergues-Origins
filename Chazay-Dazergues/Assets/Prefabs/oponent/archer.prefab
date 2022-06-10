@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1724109065}
   m_Layer: 6
   m_Name: archer
-  m_TagString: enemy_simple
+  m_TagString: archer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 5b4b5bb559abd044791dedff1b79315e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.28, y: 0.96}
@@ -175,3 +175,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1431605299, guid: f5551a55549d50d4ba5cd41201311d1b, type: 3}
   LaunchOffset: {fileID: 969718153}
+  PV_max: 100
+  PV: 100
