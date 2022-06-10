@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 850545327}
   - component: {fileID: 850545326}
   - component: {fileID: 850545328}
+  - component: {fileID: 850545329}
   m_Layer: 0
   m_Name: CurrentGameManager
   m_TagString: Untagged
@@ -305,6 +306,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToUnlock: 2
+--- !u!114 &850545329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850545325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406e2a00d6ff99c43a771193af438178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverUI: {fileID: 1393994469}
+  MainMenuLoad: MainMenu
 --- !u!1001 &1125237285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +537,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6816942664567962045, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 850545329}
+    - target: {fileID: 6816942664567962045, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816942664972721944, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 850545329}
+    - target: {fileID: 6816942664972721944, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816942665015231628, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 850545329}
+    - target: {fileID: 6816942665015231628, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6816942665110517903, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -588,6 +627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1393994469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6816942664952505302, guid: e25ff43379ddb1548af97e129a1bf529, type: 3}
+  m_PrefabInstance: {fileID: 1393994466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1422657345
 PrefabInstance:
   m_ObjectHideFlags: 0
