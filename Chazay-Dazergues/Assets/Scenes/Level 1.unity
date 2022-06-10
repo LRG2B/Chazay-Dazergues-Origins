@@ -123,6 +123,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &203593454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6816942664933142575, guid: af2f4abcedef3e2439ad75bb82ac6939, type: 3}
+  m_PrefabInstance: {fileID: 1020306187}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &549108063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6816942663961732077, guid: af2f4abcedef3e2439ad75bb82ac6939, type: 3}
+  m_PrefabInstance: {fileID: 1020306187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &850545325
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +639,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1211282565280532643, guid: f7bd9aabb461a9244a440db6b6fc8e36, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 203593454}
+    - target: {fileID: 1211282565280532643, guid: f7bd9aabb461a9244a440db6b6fc8e36, type: 3}
+      propertyPath: loadingScreen
+      value: 
+      objectReference: {fileID: 549108063}
     - target: {fileID: 1211282565280532647, guid: f7bd9aabb461a9244a440db6b6fc8e36, type: 3}
       propertyPath: m_Name
       value: ExitLevel
