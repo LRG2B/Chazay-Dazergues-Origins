@@ -7,16 +7,16 @@ public class LoadSpecificScene : MonoBehaviour
 {
     //Permet de récupérer l'index du level en cours
 
-    public Button[] levelButtons;
+    //public Button[] levelButtons;
 
     public string SceneName;
 
     public GameObject loadingScreen;
 
-    public Slider slider;
+    //public Slider slider;
 
 
-    private void Start()
+    /*private void Start()
     {
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
@@ -27,7 +27,7 @@ public class LoadSpecificScene : MonoBehaviour
                 levelButtons[i].interactable = false;
             }
         }
-    }
+    }*/
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,13 +41,13 @@ public class LoadSpecificScene : MonoBehaviour
     public void LoadLevel(string SceneName)
     {
         StartCoroutine(LoadAsyncchrononously(SceneName));
-        LoadAndSaveData.instance.SaveData();
     }
 
     IEnumerator LoadAsyncchrononously (string SceneName)
     {
         //Pour sauvegarder les datas
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
+        LoadAndSaveData.instance.SaveData();
 
 
         //Pour activer le loading screen
@@ -57,7 +57,7 @@ public class LoadSpecificScene : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
 
-            slider.value = progress;
+            //slider.value = progress;
 
             yield return null;
         }

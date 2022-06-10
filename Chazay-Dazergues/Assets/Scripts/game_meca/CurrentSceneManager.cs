@@ -23,17 +23,6 @@ public class CurrentSceneManager : MonoBehaviour
         }
 
         instance = this;
-        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            //Le joueur apparaîtra donc à cette nouvelle position
-            playerSpawn.position = transform.position;
-            //On détruit le spawn car il nous sert plus à rien
-            //Destroy(gameObject);
-        }
+        //playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
     }
 }
