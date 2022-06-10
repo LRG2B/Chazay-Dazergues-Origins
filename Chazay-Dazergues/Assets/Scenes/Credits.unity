@@ -232,6 +232,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 561978299}
+  - component: {fileID: 561978300}
+  - component: {fileID: 561978301}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -260,6 +262,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -2535.1}
   m_SizeDelta: {x: 0, y: -5070.131}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &561978300
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561978298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af5528a58476e1b4a97ed517d0832c25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &561978301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561978298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555e411c6635b8c46998106ba312f581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &691018145
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,8 +363,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Ce jeu objectivement magnifique \nvous a \xE9t\xE9 propos\xE9 par LRG\xB2B\n
-    un groupe d\u2019amis \ntous plus beaux gosses \nles uns que les autres ! </b>\r\n\nNous
+  m_Text: "<b>Ce jeu objectivement magnifique \nvous a \xE9t\xE9 propos\xE9 par LRG\xB2B\nun
+    groupe d\u2019amis \ntous plus beaux gosses \nles uns que les autres ! </b>\r\n\nNous
     vous remercions d\u2019y avoir jou\xE9 et esp\xE9rons que vous avez pris du plaisir.\n\n\nproduction
     :\n\nGame Manager : Lo\xEFc\n\nCafeti\xE8re : Guillaume\r\n\nAnimations joueur
     : Gabriel\n\r\nLore : Guillaume\r\n\nUn morceau de patate : Simon\r\n\nSyst\xE8me
@@ -506,6 +539,7 @@ GameObject:
   - component: {fileID: 1180573966}
   - component: {fileID: 1180573968}
   - component: {fileID: 1180573967}
+  - component: {fileID: 1180573969}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -552,7 +586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ce470322b7e4894fbf761b49fe3bfa8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4f5a01f07af1d54ab392a3a6543cb1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -570,6 +604,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180573965}
   m_CullTransparentMesh: 1
+--- !u!95 &1180573969
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180573965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3b9b88e77a0db64dafd7213207f82aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1274826902
 GameObject:
   m_ObjectHideFlags: 0
