@@ -12,7 +12,7 @@ public class coin_pickable : MonoBehaviour
         if (collision.CompareTag("Player") && !destroy)
         {
             destroy = true;
-            Inventory.instance.AddCoins(value);
+            inventory.instance.AddCoins(value);
             Destroy(gameObject);
         }
     }

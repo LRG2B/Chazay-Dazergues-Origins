@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
-{
+{   
     public int PV = 100;
     public int PV_max = 100;
 
@@ -11,10 +11,13 @@ public class Health : MonoBehaviour
 
     public HealthBar healthbar;
 
+    Animator Anim;
+
     // Start is called before the first frame update
-    public void Awake()
-    {
-        if (instance != null && instance != this)
+    void Awake()
+    {    
+
+       if (instance != null && instance != this)
         {
             Debug.LogWarning("manager Health deja existant ");
             Destroy(this);
@@ -23,15 +26,17 @@ public class Health : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     void Start()
     {
         PV = PV_max;
         healthbar.SetMaxHealth(PV_max);
+        Anim = GetComponent<Animator>();
     }
 
-    //Uniquement pour des tests
+    //Uniquement pour des tests - Inflige des d�g�ts
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
@@ -40,10 +45,17 @@ public class Health : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+
+    public void TakeDamage(int damage)
     {
         PV -= damage;
         healthbar.SetHealth(PV);
+        Anim.SetTrigger("hit");
+        if (PV <= 0)
+        {
+            GameOverManager.instance.OnPlayerDeath();
+            Anim.SetBool("dead", true);
+        }
     }
 
     public void AddPV(int value)
@@ -53,4 +65,10 @@ public class Health : MonoBehaviour
         if (PV > PV_max)
             PV = PV_max;
     }
+
+    public bool GetBoolDead()
+    {
+        return Anim.GetBool("dead");
+    }
+
 }

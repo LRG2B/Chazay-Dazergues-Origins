@@ -9,7 +9,7 @@ public class potion_pickable : MonoBehaviour
         if (collision.CompareTag("Player") && !destroy)
         {
             destroy = true;
-            Inventory.instance.AddPotions();
+            inventory.instance.AddPotions();
             Destroy(gameObject);
         }
     }
