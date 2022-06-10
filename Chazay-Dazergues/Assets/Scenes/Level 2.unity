@@ -164,9 +164,9 @@ MonoBehaviour:
     - "Pain (5 PV)\r : 5 moules \xE0 gars"
     - "Fromage (10 PV)\r : 7 moules \xE0 gars "
     - "Viande (15 PV)\r : 10 moules \xE0 gars "
-    - "Bi\xE8re (20 PV)\r : 15 moules \xE0 gars"
+    - "Bi\xE8re (20 PV)\r : 30 moules \xE0 gars"
     articles_bool: 
-    price: 0300000005000000070000000a0000000f000000
+    price: 0300000005000000070000000a0000001e000000
     value: 03000000050000000a0000000f00000014000000
 --- !u!114 &332199780
 MonoBehaviour:

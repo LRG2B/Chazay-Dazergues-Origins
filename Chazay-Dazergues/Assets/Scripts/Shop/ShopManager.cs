@@ -83,23 +83,33 @@ public class ShopManager : MonoBehaviour
 
     private void Check(int id)
     {
-        if (damage && shop_price[id] <= playerInventory.nb_coins)
+        if (id == 4 && heal && shop_price[id] <= playerInventory.nb_coins)
         {
-            playerAttack.UpgradeDamage(shop_value[id]);
+            playerInventory.AddPotions();
             playerInventory.SuppCoins(shop_price[id]);
             T_Error.text = "";
-        }
-        else if (heal && playerHealth.PV_max > playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
-        {
-            playerHealth.AddPV(shop_value[id]);
-            playerInventory.SuppCoins(shop_price[id]);
-            T_Error.text = "";
-        }
-        else if (heal && playerHealth.PV_max == playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
-        {
-            T_Error.text = "Votre santé est au maximum";
         }
         else
-            T_Error.text = "Vous n'avez pas assez de moules à gars";
+        {
+            if (damage && shop_price[id] <= playerInventory.nb_coins)
+            {
+                playerAttack.UpgradeDamage(shop_value[id]);
+                playerInventory.SuppCoins(shop_price[id]);
+                T_Error.text = "";
+            }
+            else if (heal && playerHealth.PV_max > playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
+            {
+                playerHealth.AddPV(shop_value[id]);
+                playerInventory.SuppCoins(shop_price[id]);
+                T_Error.text = "";
+            }
+            else if (heal && playerHealth.PV_max == playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
+            {
+                T_Error.text = "Votre santé est au maximum";
+            }
+            else
+                T_Error.text = "Vous n'avez pas assez de moules à gars";
+        }
+
     }
 }
