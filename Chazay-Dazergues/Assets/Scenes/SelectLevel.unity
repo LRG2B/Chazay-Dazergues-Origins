@@ -514,7 +514,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810391803}
-        m_TargetAssemblyTypeName: LoadSpecificScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadSceneFromMainMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
@@ -829,7 +829,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810391803}
-        m_TargetAssemblyTypeName: LoadSpecificScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadSceneFromMainMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
@@ -962,7 +962,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810391803}
-        m_TargetAssemblyTypeName: LoadSpecificScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadSceneFromMainMenu, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
@@ -1116,15 +1116,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810391802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a549e7142bde4c4488a1cb86ee9fcb0, type: 3}
+  m_Script: {fileID: 11500000, guid: d01694a27e317cd4da5d6e8c35c7d4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelButtons:
   - {fileID: 1427663523}
   - {fileID: 1706681267}
   SceneName: MainMenu
-  loadingScreen: {fileID: 0}
-  slider: {fileID: 0}
 --- !u!4 &1810391804
 Transform:
   m_ObjectHideFlags: 0

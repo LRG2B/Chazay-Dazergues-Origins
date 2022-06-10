@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadSpecificScene : MonoBehaviour
+public class LoadSceneFromMainMenu : MonoBehaviour
 {
     //Permet de récupérer l'index du level en cours
 
@@ -11,30 +11,16 @@ public class LoadSpecificScene : MonoBehaviour
 
     public string SceneName;
 
-    public GameObject loadingScreen;
-
-    public Slider slider;
-
-
     private void Start()
     {
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            if(i + 1 > levelReached)
+            if (i + 1 > levelReached)
             {
                 levelButtons[i].interactable = false;
             }
-        }
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            LoadLevel(SceneName);
         }
     }
 
@@ -44,23 +30,11 @@ public class LoadSpecificScene : MonoBehaviour
         LoadAndSaveData.instance.SaveData();
     }
 
-    IEnumerator LoadAsyncchrononously (string SceneName)
+    IEnumerator LoadAsyncchrononously(string SceneName)
     {
         //Pour sauvegarder les datas
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
-
-
-        //Pour activer le loading screen
-        loadingScreen.SetActive(true);
-            
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-
-            slider.value = progress;
-
-            yield return null;
-        }
+        yield return null;
     }
 
 }
