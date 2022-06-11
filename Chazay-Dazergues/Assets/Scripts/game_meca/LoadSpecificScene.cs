@@ -47,7 +47,6 @@ public class LoadSpecificScene : MonoBehaviour
     {
         //Pour sauvegarder les datas
         LoadAndSaveData.instance.SaveData();
-
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
 
 

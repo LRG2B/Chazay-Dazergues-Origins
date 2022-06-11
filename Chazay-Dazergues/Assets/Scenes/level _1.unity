@@ -629,9 +629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a549e7142bde4c4488a1cb86ee9fcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Level 2
-  loadingScreen: {fileID: 0}
-  slider: {fileID: 0}
+  SceneName: level_2
+  loadingScreen: {fileID: 1514500094}
+  slider: {fileID: 836825835}
 --- !u!1001 &352602568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1105,6 +1105,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &836825835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7098434902027075582, guid: ba8eb3a8b1cc8cb49a24ed899a714bff, type: 3}
+  m_PrefabInstance: {fileID: 286768949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &850545325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1128,7 @@ GameObject:
   - component: {fileID: 850545326}
   - component: {fileID: 850545328}
   - component: {fileID: 850545330}
+  - component: {fileID: 850545329}
   m_Layer: 0
   m_Name: CurrentSceneManager
   m_TagString: Untagged
@@ -1164,6 +1176,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionText: {fileID: 950508830}
   animator: {fileID: 1376579179}
+--- !u!114 &850545329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850545325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec6b3372960b6d4e8e5080462e25657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToUnlock: 2
 --- !u!114 &850545330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,6 +1739,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b29f1ac077cf39c439272c92fc753fb8, type: 3}
+--- !u!1 &1514500094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7098434903202688060, guid: ba8eb3a8b1cc8cb49a24ed899a714bff, type: 3}
+  m_PrefabInstance: {fileID: 286768949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1683072586
 PrefabInstance:
   m_ObjectHideFlags: 0
