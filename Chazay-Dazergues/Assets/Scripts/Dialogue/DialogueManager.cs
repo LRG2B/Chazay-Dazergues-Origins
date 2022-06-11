@@ -9,14 +9,14 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
 
-    private Queue<string> sentences;
+    private Queue<Sentences> sentences;
 
     private float speed;
     private float jump;
 
     void Start()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<Sentences>();
         speed = GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed;
         jump = GameObject.Find("HeroKnight").GetComponent<Mouvement>().jump_power;
     }
@@ -36,11 +36,11 @@ public class DialogueManager : MonoBehaviour
         GameObject.Find("HeroKnight").GetComponent<Animator>().SetBool("CanMove", false);
         animator.SetBool("IsOpen", true);
 
-        nameText.text = dialogue.name;
+        nameText.text = dialogue.sentences[0].Name;
 
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (Sentences sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -56,9 +56,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        Sentences sentence = sentences.Dequeue();
+        nameText.text = sentence.Name;
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence.Sentence));
     }
 
     IEnumerator TypeSentence(string sentence)

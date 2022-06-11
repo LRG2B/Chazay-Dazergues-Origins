@@ -99,7 +99,6 @@ public class ShopManager : MonoBehaviour
                 playerInventory.SuppCoins(shop_price[id]);
                 shop_bonus[id] = true;
                 playerInventory.SetBonus(shop_bonus);
-                GameObject.Find("Black Smith").GetComponent<ShopTrigger>().SetBonusOrigin(id);
                 T_Error.text = "";
             }
             else if (damage && shop_price[id] <= playerInventory.nb_coins && playerInventory.GetBonusById(id))
