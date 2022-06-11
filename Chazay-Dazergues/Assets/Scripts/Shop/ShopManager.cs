@@ -73,7 +73,6 @@ public class ShopManager : MonoBehaviour
 
     public void Buy(GameObject button)
     {
-        
         if (button.name == "Button1") Check(0);
         else if (button.name == "Button2") Check(1);
         else if (button.name == "Button3") Check(2);

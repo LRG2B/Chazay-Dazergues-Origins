@@ -17,7 +17,7 @@ public class ShopTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown("e") && IsAllow)
         {
-            TriggerShop();
+            OpenShop();
         }
         if (Input.GetKeyDown("r"))
             FindObjectOfType<ShopManager>().CloseShop();
@@ -33,7 +33,7 @@ public class ShopTrigger : MonoBehaviour
         IsAllow = false;
     }
 
-    public void TriggerShop()
+    public void OpenShop()
     {
         FindObjectOfType<ShopManager>().StartShop(shop);
     }

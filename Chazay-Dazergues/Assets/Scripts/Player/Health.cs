@@ -26,7 +26,6 @@ public class Health : MonoBehaviour
         {
             instance = this;
         }
-
     }
 
     void Start()
@@ -44,7 +43,6 @@ public class Health : MonoBehaviour
             TakeDamage(20);
         }
     }
-
 
     public void TakeDamage(int damage)
     {
@@ -69,5 +67,4 @@ public class Health : MonoBehaviour
     {
         return Anim.GetBool("dead");
     }
-
 }

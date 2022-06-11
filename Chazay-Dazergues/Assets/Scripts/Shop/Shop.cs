@@ -10,7 +10,6 @@ public class Shop
     public string name;
     [TextArea(3, 10)]
     public string[] articles;
-    public bool[] articles_bool;
     public int[] price;
     public int[] value;
 }
