@@ -507,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4890235613225140318, guid: 7e23f34a7185ee349bb4d4964238501b, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4890235613225140318, guid: 7e23f34a7185ee349bb4d4964238501b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1742,7 +1742,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4890235613225140318, guid: 7e23f34a7185ee349bb4d4964238501b, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4890235613225140318, guid: 7e23f34a7185ee349bb4d4964238501b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2178,7 +2178,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &850545328
 MonoBehaviour:
@@ -2696,7 +2696,7 @@ Transform:
   m_Children:
   - {fileID: 320132026}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415787465
 GameObject:
@@ -2762,7 +2762,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1452936612
 PrefabInstance:
@@ -2858,7 +2858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050912266947362849, guid: d8b03f95b21b652468a20dde38814167, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5050912266947362849, guid: d8b03f95b21b652468a20dde38814167, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2971,51 +2971,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad90f988c5db574ab8e73a160e0b48e, type: 3}
---- !u!1 &1713451826
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1713451828}
-  - component: {fileID: 1713451827}
-  m_Layer: 0
-  m_Name: Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1713451827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713451826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4053a5eb53a9f47968a8541de4a7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nb_coins: 0
-  nb_potions: 0
---- !u!4 &1713451828
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713451826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8604666, y: -0.98617357, z: 105.42853}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1762414446 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5884433235787326210, guid: ba8eb3a8b1cc8cb49a24ed899a714bff, type: 3}
@@ -3053,7 +3008,7 @@ GameObject:
   - component: {fileID: 1959723472}
   - component: {fileID: 1959723473}
   m_Layer: 0
-  m_Name: Idle_0
+  m_Name: Black Smith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3167,7 +3122,7 @@ Transform:
   m_LocalScale: {x: 0.47372755, y: 0.47372755, z: 0.47372755}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959723472
 MonoBehaviour:
@@ -3191,6 +3146,7 @@ MonoBehaviour:
     - "XX d\xE9g\xE2ts en plus : 75 moules \xE0 gars"
     - "XX d\xE9g\xE2ts en plus : 100 moules \xE0 gars"
     - "One-shot assur\xE9 : 999 moules \xE0 gars"
+    bonus: 0000000000
     price: 19000000320000004b00000064000000e7030000
     value: 0f00000014000000190000003200000064000000
 --- !u!114 &1959723473

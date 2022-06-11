@@ -18,6 +18,8 @@ public class ShopManager : MonoBehaviour
     private float jump;
     private int[] shop_price;
     private int[] shop_value;
+    private bool[] shop_bonus;
+    private bool bonus;
     private bool damage;
     private bool heal;
     private Mouvement playerController;
@@ -48,6 +50,7 @@ public class ShopManager : MonoBehaviour
 
         damage = shop.damage;
         heal = shop.heal;
+        shop_bonus = shop.bonus;
         shop_price = shop.price;
         shop_value = shop.value;
         T_Shop.text = shop.name;
@@ -90,11 +93,18 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            if (damage && shop_price[id] <= playerInventory.nb_coins)
+            if (damage && shop_price[id] <= playerInventory.nb_coins && !playerInventory.GetBonusById(id))
             {
                 playerAttack.UpgradeDamage(shop_value[id]);
                 playerInventory.SuppCoins(shop_price[id]);
+                shop_bonus[id] = true;
+                playerInventory.SetBonus(shop_bonus);
+                GameObject.Find("Black Smith").GetComponent<ShopTrigger>().SetBonusOrigin(id);
                 T_Error.text = "";
+            }
+            else if (damage && shop_price[id] <= playerInventory.nb_coins && playerInventory.GetBonusById(id))
+            {
+                T_Error.text = "Vous avez déjà acheté ce bonus !";
             }
             else if (heal && playerHealth.PV_max > playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
             {
@@ -104,11 +114,15 @@ public class ShopManager : MonoBehaviour
             }
             else if (heal && playerHealth.PV_max == playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
             {
-                T_Error.text = "Votre santé est au maximum";
+                T_Error.text = "Votre santé est au maximum !";
             }
             else
-                T_Error.text = "Vous n'avez pas assez de moules à gars";
+                T_Error.text = "Vous n'avez pas assez de moules à gars !";
         }
+    }
 
+    public bool[] GetBonus()
+    {
+        return shop_bonus;
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //Inventory sera un singleton
 //Pour qu'on puisse récupérer des objets
@@ -8,9 +9,17 @@ public class inventory : MonoBehaviour
     public int nb_coins = 100;
     public int nb_potions;
 
+    private bool[] damage_bonus;
+
     // public Text coinsCountText;
     //Création du singleton
     public static inventory instance;
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "Level 1")
+            damage_bonus = GameObject.Find("Black Smith").GetComponent<ShopTrigger>().shop.bonus;
+    }
 
     private void Awake()
     {
@@ -29,7 +38,6 @@ public class inventory : MonoBehaviour
             //DontDestroyOnLoad(instance);
         }
     }
-
 
     private void Update()
     {
@@ -54,4 +62,18 @@ public class inventory : MonoBehaviour
         }
     }
 
+    public bool[] GetBonus()
+    {
+        return damage_bonus;
+    }
+
+    public bool GetBonusById(int id)
+    {
+        return damage_bonus[id];
+    }
+
+    public void SetBonus(bool[] bonus)
+    {
+        damage_bonus = bonus;
+    }
 }
