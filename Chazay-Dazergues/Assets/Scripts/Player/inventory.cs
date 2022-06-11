@@ -44,6 +44,7 @@ public class inventory : MonoBehaviour
         nb_coins += count;
     }
 
+    public void SuppCoins(int count) { nb_coins -= count; }
     public void AddPotions()
     {
         nb_potions++;

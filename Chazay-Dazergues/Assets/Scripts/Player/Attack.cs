@@ -62,5 +62,9 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         can_attack = true;
     }
+    public void UpgradeDamage(int damage)
+    {
+        attack_domage += damage;
+    }
 
 }
