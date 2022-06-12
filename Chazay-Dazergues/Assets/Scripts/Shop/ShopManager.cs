@@ -33,7 +33,7 @@ public class ShopManager : MonoBehaviour
     {
         playerController = GameObject.Find("HeroKnight").GetComponent<Mouvement>();
         playerAnimator = GameObject.Find("HeroKnight").GetComponent<Animator>();
-        playerInventory = GameObject.Find("CurrentSceneManager").GetComponent<inventory>();
+        playerInventory = GameObject.Find("DataManager").GetComponent<inventory>();
         playerAttack = GameObject.Find("HeroKnight").GetComponent<Attack>();
         playerHealth = GameObject.Find("HeroKnight").GetComponent<Health>();
 
