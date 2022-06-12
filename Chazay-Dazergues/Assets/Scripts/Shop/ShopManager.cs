@@ -40,20 +40,6 @@ public class ShopManager : MonoBehaviour
         speed = playerController.Speed;
         jump = playerController.jump_power;
 
-        if (LoadAndSaveData.instance != null)
-        {
-            shop_bonus = LoadAndSaveData.instance.bonus;
-            for(int i = 0; i < 5; i++)
-            {
-                if (shop_bonus[i])
-                {
-                    buttonName = "Button" + (i + 1);
-                    textButtonName = "TextButton" + (i + 1);
-                    GameObject.Find(buttonName).GetComponent<Image>().fillCenter = false;
-                    GameObject.Find(textButtonName).GetComponent<Text>().text = "Acheté";
-                }
-            }
-        }
     }
 
     public void StartShop(Shop shop)
@@ -75,6 +61,38 @@ public class ShopManager : MonoBehaviour
         T_Articles3.text = shop.articles[2];
         T_Articles4.text = shop.articles[3];
         T_Articles5.text = shop.articles[4];
+        
+        if (damage)
+        {
+            if (LoadAndSaveData.instance != null)
+            {
+                shop_bonus = LoadAndSaveData.instance.bonus;
+                for(int i = 0; i < 5; i++)
+                {
+                    if (shop_bonus[i])
+                    {
+                        buttonName = "Button" + (i + 1);
+                        textButtonName = "TextButton" + (i + 1);
+                        GameObject.Find(buttonName).GetComponent<Image>().fillCenter = false;
+                        GameObject.Find(textButtonName).GetComponent<Text>().text = "Acheté";
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (LoadAndSaveData.instance != null)
+            {
+                shop_bonus = LoadAndSaveData.instance.bonus;
+                for (int i = 0; i < 5; i++)
+                {
+                    buttonName = "Button" + (i + 1);
+                    textButtonName = "TextButton" + (i + 1);
+                    GameObject.Find(buttonName).GetComponent<Image>().fillCenter = true;
+                    GameObject.Find(textButtonName).GetComponent<Text>().text = "Acheter";
+                }
+            }
+        }
     }
     
     public void CloseShop()
