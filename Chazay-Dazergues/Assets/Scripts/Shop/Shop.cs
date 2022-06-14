@@ -8,9 +8,9 @@ public class Shop
     public bool damage;
     public bool heal;
     public string name;
-    [TextArea(3, 10)]
+    [TextArea(2, 10)]
     public string[] articles;
-    public bool[] articles_bool;
+    public bool[] bonus;
     public int[] price;
     public int[] value;
 }

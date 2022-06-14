@@ -8,9 +8,12 @@ public class DialogueTrigger : MonoBehaviour
     private bool IsAllow;
     public Dialogue dialogue;
 
+    private bool Activated;
+
     void Start()
     {
         IsAllow = false;
+        Activated = false;
     }
 
     void Update()
@@ -19,10 +22,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             TriggerDialogue();
             IsAllow = false;
-        }
-        if (Input.GetKeyDown("e"))
-        {
-            Debug.Log("Touche E pressée");
         }
     }
 

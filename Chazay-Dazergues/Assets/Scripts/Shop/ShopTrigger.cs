@@ -26,6 +26,7 @@ public class ShopTrigger : MonoBehaviour
     void OnTriggerEnter2D()
     {
         IsAllow = true;
+        shop.bonus = GameObject.Find("DataManager").GetComponent<inventory>().GetBonus();
     }
 
     void OnTriggerExit2D()
@@ -36,5 +37,10 @@ public class ShopTrigger : MonoBehaviour
     public void TriggerShop()
     {
         FindObjectOfType<ShopManager>().StartShop(shop);
+    }
+
+    public void SetBonusOrigin(int id)
+    {
+        shop.bonus[id] = true;
     }
 }

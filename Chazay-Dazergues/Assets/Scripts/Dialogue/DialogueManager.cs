@@ -9,16 +9,16 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
 
-    private Queue<string> sentences;
+    private Queue<Sentences> sentences;
 
     private float speed;
     private float jump;
 
     void Start()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<Sentences>();
         speed = GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed;
-        //jump = GameObject.Find("Player").GetComponent<Player_mouvement>().jumpPower;
+        jump = GameObject.Find("HeroKnight").GetComponent<Mouvement>().jump_power;
     }
 
     void Update()
@@ -32,15 +32,16 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed = 0f;
-        //GameObject.Find("Player").GetComponent<PlayerController>().jumpPower = 0f;
+        GameObject.Find("HeroKnight").GetComponent<Mouvement>().jump_power = 0f;
         GameObject.Find("HeroKnight").GetComponent<Animator>().SetBool("CanMove", false);
+        GameObject.Find("HeroKnight").GetComponent<Animator>().SetBool("CanAttack", false);
         animator.SetBool("IsOpen", true);
 
-        nameText.text = dialogue.name;
+        nameText.text = dialogue.sentences[0].Name;
 
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (Sentences sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -56,9 +57,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        Sentences sentence = sentences.Dequeue();
+        nameText.text = sentence.Name;
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence.Sentence));
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -76,7 +78,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
 
         GameObject.Find("HeroKnight").GetComponent<Mouvement>().Speed = speed;
-        //GameObject.Find("Player").GetComponent<Player_mouvement>().jumpPower = jump;
+        GameObject.Find("HeroKnight").GetComponent<Mouvement>().jump_power = jump;
         GameObject.Find("HeroKnight").GetComponent<Animator>().SetBool("CanMove", true);
     }
 }

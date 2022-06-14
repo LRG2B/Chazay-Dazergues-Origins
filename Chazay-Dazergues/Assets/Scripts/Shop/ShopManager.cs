@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,8 +18,11 @@ public class ShopManager : MonoBehaviour
     private float jump;
     private int[] shop_price;
     private int[] shop_value;
+    private bool[] shop_bonus;
     private bool damage;
     private bool heal;
+    private string buttonName;
+    private string textButtonName;
     private Mouvement playerController;
     private Animator playerAnimator;
     private inventory playerInventory;
@@ -30,22 +33,24 @@ public class ShopManager : MonoBehaviour
     {
         playerController = GameObject.Find("HeroKnight").GetComponent<Mouvement>();
         playerAnimator = GameObject.Find("HeroKnight").GetComponent<Animator>();
-        playerInventory = GameObject.Find("CurrentSceneManager").GetComponent<inventory>();
+        playerInventory = GameObject.Find("DataManager").GetComponent<inventory>();
         playerAttack = GameObject.Find("HeroKnight").GetComponent<Attack>();
         playerHealth = GameObject.Find("HeroKnight").GetComponent<Health>();
 
         speed = playerController.Speed;
         jump = playerController.jump_power;
+
     }
 
     public void StartShop(Shop shop)
     {
-        playerController.Speed = 0f; 
+        playerController.Speed = 0f;
         playerController.jump_power = 0f;
         playerAnimator.SetBool("CanMove", false);
         playerAnimator.SetBool("CanAttack", false);
         animator.SetBool("IsOpen", true);
 
+        buttonName = "";
         damage = shop.damage;
         heal = shop.heal;
         shop_price = shop.price;
@@ -56,8 +61,40 @@ public class ShopManager : MonoBehaviour
         T_Articles3.text = shop.articles[2];
         T_Articles4.text = shop.articles[3];
         T_Articles5.text = shop.articles[4];
+
+        if (damage)
+        {
+            if (LoadAndSaveData.instance != null)
+            {
+                shop_bonus = LoadAndSaveData.instance.bonus;
+                for (int i = 0; i < 5; i++)
+                {
+                    if (shop_bonus[i])
+                    {
+                        buttonName = "Button" + (i + 1);
+                        textButtonName = "TextButton" + (i + 1);
+                        GameObject.Find(buttonName).GetComponent<Image>().fillCenter = false;
+                        GameObject.Find(textButtonName).GetComponent<Text>().text = "Acheté";
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (LoadAndSaveData.instance != null)
+            {
+                shop_bonus = LoadAndSaveData.instance.bonus;
+                for (int i = 0; i < 5; i++)
+                {
+                    buttonName = "Button" + (i + 1);
+                    textButtonName = "TextButton" + (i + 1);
+                    GameObject.Find(buttonName).GetComponent<Image>().fillCenter = true;
+                    GameObject.Find(textButtonName).GetComponent<Text>().text = "Acheter";
+                }
+            }
+        }
     }
-    
+
     public void CloseShop()
     {
         playerController.Speed = speed;
@@ -73,7 +110,6 @@ public class ShopManager : MonoBehaviour
 
     public void Buy(GameObject button)
     {
-        
         if (button.name == "Button1") Check(0);
         else if (button.name == "Button2") Check(1);
         else if (button.name == "Button3") Check(2);
@@ -91,11 +127,21 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            if (damage && shop_price[id] <= playerInventory.nb_coins)
+            if (damage && shop_price[id] <= playerInventory.nb_coins && !shop_bonus[id])
             {
+                buttonName = "Button" + (id + 1);
+                textButtonName = "TextButton" + (id + 1);
                 playerAttack.UpgradeDamage(shop_value[id]);
                 playerInventory.SuppCoins(shop_price[id]);
+                shop_bonus[id] = true;
+                LoadAndSaveData.instance.bonus = shop_bonus;
+                GameObject.Find(buttonName).GetComponent<Image>().fillCenter = false;
+                GameObject.Find(textButtonName).GetComponent<Text>().text = "Acheté";
                 T_Error.text = "";
+            }
+            else if (damage && shop_bonus[id])
+            {
+                T_Error.text = "Vous avez déjà acheté ce bonus !";
             }
             else if (heal && playerHealth.PV_max > playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
             {
@@ -105,11 +151,12 @@ public class ShopManager : MonoBehaviour
             }
             else if (heal && playerHealth.PV_max == playerHealth.PV && shop_price[id] <= playerInventory.nb_coins)
             {
-                T_Error.text = "Votre sant� est au maximum";
+                T_Error.text = "Votre santé est au maximum !";
             }
             else
-                T_Error.text = "Vous n'avez pas assez de moules � gars";
+                T_Error.text = "Vous n'avez pas assez de moules à gars !";
         }
-
     }
+
+    public bool[] GetBonus() { return shop_bonus; }
 }

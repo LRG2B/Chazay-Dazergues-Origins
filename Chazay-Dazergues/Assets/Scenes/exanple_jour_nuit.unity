@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 635884682}
     - target: {fileID: 1211282565280532643, guid: f7bd9aabb461a9244a440db6b6fc8e36, type: 3}
       propertyPath: SceneName
-      value: Credits
+      value: SelectLevel
       objectReference: {fileID: 0}
     - target: {fileID: 1211282565280532643, guid: f7bd9aabb461a9244a440db6b6fc8e36, type: 3}
       propertyPath: loadingScreen
