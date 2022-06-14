@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadAndSaveData : MonoBehaviour
 {
     public static LoadAndSaveData instance;
     public bool[] bonus;
+    Scene scene;
     // Start is called before the first frame update
 
     private void Awake()
@@ -20,11 +22,13 @@ public class LoadAndSaveData : MonoBehaviour
 
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
         //getters
         //0 est une default value au cas où
         inventory.instance.nb_coins = PlayerPrefs.GetInt("coinsCount", 0);
         inventory.instance.nb_potions = PlayerPrefs.GetInt("potionsCount", 0);
-        bonus = GameObject.Find("Black Smith").GetComponent<ShopTrigger>().shop.bonus;
+        if (scene.name == "level _1")
+            bonus = GameObject.Find("Black Smith").GetComponent<ShopTrigger>().shop.bonus;
     }
 
     public void SaveData()
