@@ -44,7 +44,7 @@ public class ShopManager : MonoBehaviour
 
     public void StartShop(Shop shop)
     {
-        playerController.Speed = 0f; 
+        playerController.Speed = 0f;
         playerController.jump_power = 0f;
         playerAnimator.SetBool("CanMove", false);
         playerAnimator.SetBool("CanAttack", false);
@@ -61,13 +61,13 @@ public class ShopManager : MonoBehaviour
         T_Articles3.text = shop.articles[2];
         T_Articles4.text = shop.articles[3];
         T_Articles5.text = shop.articles[4];
-        
+
         if (damage)
         {
             if (LoadAndSaveData.instance != null)
             {
                 shop_bonus = LoadAndSaveData.instance.bonus;
-                for(int i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     if (shop_bonus[i])
                     {
@@ -94,7 +94,7 @@ public class ShopManager : MonoBehaviour
             }
         }
     }
-    
+
     public void CloseShop()
     {
         playerController.Speed = speed;

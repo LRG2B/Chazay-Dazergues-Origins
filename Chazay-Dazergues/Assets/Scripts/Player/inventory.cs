@@ -4,16 +4,15 @@ using UnityEngine.SceneManagement;
 
 //Inventory sera un singleton
 //Pour qu'on puisse récupérer des objets
-public class inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
-    public int nb_coins = 100;
+    public int nb_coins;
     public int nb_potions;
-
     private bool[] damage_bonus;
 
     // public Text coinsCountText;
     //Création du singleton
-    public static inventory instance;
+    public static Inventory instance;
 
     private void Start()
     {
@@ -28,20 +27,19 @@ public class inventory : MonoBehaviour
 
         if (instance != null && instance != this)
         {
-            Debug.LogWarning("manager inventory deja existant ");
+            Debug.LogWarning("manager  inventory deja existant ");
             Destroy(this);
         }
         else
         {
             instance = this;
-            //Création de problèmes
-            //DontDestroyOnLoad(instance);
         }
     }
 
+
     private void Update()
     {
-        if (Input.GetButtonDown("Fire2")) // correspont au clic droit de la souris ( en utillisant ces clé la le jeu est compatible manette )
+        if (Input.GetButtonDown("Fire2")) // correspont au clic droit de la souris ( en utillisant ces clé la le jeu et compatible manette )
         {
             UsePotion();
         }
@@ -49,9 +47,15 @@ public class inventory : MonoBehaviour
 
     public void AddCoins(int count) { nb_coins += count; }
 
+<<<<<<< Updated upstream
+    public void AddPotions()
+    {
+        nb_potions++;
+    }
+=======
     public void SuppCoins(int count) { nb_coins -= count; }
-
     public void AddPotions() { nb_potions++; }
+>>>>>>> Stashed changes
 
     private void UsePotion()
     {
@@ -62,18 +66,9 @@ public class inventory : MonoBehaviour
         }
     }
 
-    public bool[] GetBonus()
-    {
-        return damage_bonus;
-    }
+    public bool[] GetBonus() { return damage_bonus; }
 
-    public bool GetBonusById(int id)
-    {
-        return damage_bonus[id];
-    }
+    public bool GetBonusById(int id) { return damage_bonus[id]; }
 
-    public void SetBonus(bool[] bonus)
-    {
-        damage_bonus = bonus;
-    }
+    public void SetBonus(bool[] bonus) { damage_bonus = bonus; }
 }

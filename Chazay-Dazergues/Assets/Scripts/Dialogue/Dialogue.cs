@@ -12,6 +12,6 @@ public class Dialogue
 public class Sentences
 {
     public string Name;
-    [TextArea (3,10)]
+    [TextArea(3, 10)]
     public string Sentence;
 }
