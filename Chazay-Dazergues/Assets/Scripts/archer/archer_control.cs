@@ -11,10 +11,12 @@ public class archer_control : MonoBehaviour
 
     public int PV_max = 100;
     public int PV = 100;
+    public bool canAttack;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        canAttack = true;
     }
 
     // Update is called once per frame
@@ -29,12 +31,17 @@ public class archer_control : MonoBehaviour
         player_ray = Physics2D.Raycast(transform.position, Vector2.left);
 
         //test si quelque chose toucher
-        if (player_ray.collider != null)
+        if (player_ray.collider != null && canAttack)
         {
             // 30% chance envoyer flèche
-            if(10 == Random.Range(10,400))
+            canAttack = false;
+            if(5 == Random.Range(1,400))
             {
                 StartCoroutine(Attack());
+            }
+            else
+            {
+                canAttack = true;
             }
         }
         //sinon rien
@@ -42,12 +49,13 @@ public class archer_control : MonoBehaviour
     }
 
 
-
     IEnumerator Attack()
     {
         anim.SetTrigger("attack");
         yield return new WaitForSeconds(0.4f);
         Instantiate(projectilePrefab, LaunchOffset.position, transform.rotation);
+        yield return new WaitForSeconds(1.5f);
+        canAttack = true;
     }
 
     public void Take_domage(int domage)

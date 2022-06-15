@@ -132,7 +132,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 8902026988036319133}
   - {fileID: 8902026986329053179}
-  domage: 20
+  domage: 25
   PV_max: 100
   PV: 100
 --- !u!212 &8902026987663576772

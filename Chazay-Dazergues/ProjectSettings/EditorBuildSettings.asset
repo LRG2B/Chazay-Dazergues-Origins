@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level_3.unity
     guid: 9d8a9f83957443f4b85f1c49250bd115
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/exanple_jour_nuit.unity
     guid: f83e563cf6086254a8001f301e02ff27
   - enabled: 1

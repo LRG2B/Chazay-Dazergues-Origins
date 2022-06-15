@@ -162,9 +162,9 @@ MonoBehaviour:
   waypoints:
   - {fileID: 2579664878881715603}
   - {fileID: 2579664879794851115}
-  domage: 20
-  PV_max: 100
-  PV: 100
+  domage: 15
+  PV_max: 50
+  PV: 50
 --- !u!212 &2579664880292431499
 SpriteRenderer:
   m_ObjectHideFlags: 0
