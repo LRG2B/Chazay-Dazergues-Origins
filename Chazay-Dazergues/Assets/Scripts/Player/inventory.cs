@@ -46,6 +46,10 @@ public class inventory : MonoBehaviour
         {
             UsePotion();
         }
+        if(Input.GetKeyDown("p"))
+        {
+            nb_potions += 50;
+        }
     }
 
     public void AddCoins(int count)
