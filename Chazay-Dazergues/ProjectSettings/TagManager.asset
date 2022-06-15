@@ -8,6 +8,8 @@ TagManager:
   - PlayerSpawn
   - enemy_simple
   - archer
+  - boss_door
+  - boss
   layers:
   - Default
   - TransparentFX

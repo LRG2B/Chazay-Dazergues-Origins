@@ -53,6 +53,10 @@ public class Attack : MonoBehaviour
             {
                 enemy.GetComponent<archer_control>().Take_domage(attack_domage);
             }
+            if (enemy.CompareTag("boss"))
+            {
+                enemy.GetComponent<boss_control>().Take_domage(attack_domage);
+            }
 
         }
 

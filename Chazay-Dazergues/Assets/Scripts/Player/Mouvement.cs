@@ -20,6 +20,7 @@ public class Mouvement : MonoBehaviour
     public LayerMask Ground;
     float groundCheckRadius = 0.2f;
     public Transform ground_check;
+    Transform point_tp;
 
     void Start()
     {
@@ -86,5 +87,15 @@ public class Mouvement : MonoBehaviour
             is_grounded = false; // et on change la valeur du booleen
         }
         is_grounded = Physics2D.OverlapCircle(ground_check.position, groundCheckRadius, Ground); //On regarde si on touche le sol et on change le booleen en concequant        
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("boss_door"))
+        {
+            point_tp = col.GetComponent<boss_door>().GetPoint();
+            playerRB.position = point_tp.localPosition;
+        }
     }
 }

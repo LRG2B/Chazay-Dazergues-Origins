@@ -19,18 +19,18 @@ public class DayAndNightCycle : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (time > 100)
+        if (time > 200)
         {
             time = 0;
         }
         //500
-        if ((int) time == 100 && canChangeDay)
+        if ((int) time == 200 && canChangeDay)
         {
             canChangeDay = false;
             days++;
         }
         //255
-        if ((int) time == 51)
+        if ((int) time == 101)
         {
             canChangeDay = true;
         }

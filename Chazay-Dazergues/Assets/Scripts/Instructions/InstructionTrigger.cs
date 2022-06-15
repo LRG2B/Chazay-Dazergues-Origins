@@ -11,7 +11,7 @@ public class InstructionTrigger : MonoBehaviour
 
     void OnTriggerEnter2D()
     {
-        TriggerInstruction();
+            TriggerInstruction();
     }
 
     void OnTriggerExit2D()
